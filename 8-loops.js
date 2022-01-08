@@ -6,10 +6,10 @@ const listaDeDestinos = new Array (
     `Rio de Janeiro`
 );
 
-const idadeComprador = 17;
+const idadeComprador = 18;
 const estaAcompanhado = false;
 let temPassagemComprada = false; //Usamos o let para que conseguimos mudar o valor.
-const destino = "Rio de Janeiro";
+const destino = "Salvador";
 
 console.log("\n Destinos possíveis:");
 console.log(listaDeDestinos);
@@ -17,8 +17,27 @@ console.log(listaDeDestinos);
 const podeComprar = idadeComprador >= 18 || estaAcompanhado == true;
 
 let contador = 0;
+let destinoExiste = false;
 
 while(contador < 3){
-    console.log(listaDeDestinos[contador]);
+    
+    if(listaDeDestinos[contador] == destino){
+        destinoExiste = true;
+        break;
+    }
     contador += 1;
+}
+
+console.log("Destino existe: ", destinoExiste);
+
+if(podeComprar && destinoExiste){
+    console.log("Boa viagem!");
+}else{
+    console.log("!Desculpe tivemos um erro!");
+}
+
+for(let cont = 0; cont < 3; cont++){
+    if(listaDeDestinos[contador] == destino){
+        destinoExiste = true;
+    }
 }
